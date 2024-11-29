@@ -10,6 +10,11 @@
     list-style: none;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 main{
     min-height: 90vh;
@@ -46,6 +51,12 @@ header .link img{
     color: black;
     margin-right: 10px;
     font-weight: 600;
+}
+
+.navlink:hover{
+    background-color: rgb(193, 51, 193);
+    color: #fff;
+    border-radius: 10px;
 }
 
 header .Nav{
@@ -197,7 +208,41 @@ section{
     font-size: 30px;
     font-weight: 800;
     color:#000;
+    cursor: pointer;
     display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen */
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    color: black;;
+    padding: 1rem;
+    transition: left 0.3s ease;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .sidebar.active{
+    left: 0;
+  }
+
+  .sidebar .cross{
+    font-weight: 800;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .sidebar div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   @media (max-width: 600px) {
@@ -206,8 +251,11 @@ section{
     }
 
     header .Nav {
-       
+       display: none;
     }
     
+    .create{
+        width: 90%;
+    }
     
   }

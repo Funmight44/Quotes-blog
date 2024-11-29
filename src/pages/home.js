@@ -3,7 +3,8 @@ import Card from "../components/card";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase/config";
 import UseTitle from "../hook/useTitle";
-import Skeleton from "react-loading-skeleton";
+
+import Loader from "../components/loader";
 
 
 const Home = () => {
@@ -38,7 +39,7 @@ const Home = () => {
         <section>
             {qoutes.map((post, index) => (
                 post ? (<Card key={post.id}  post={post} toogle={toogle} setToogle={setToogle}/>) 
-                : (<Skeleton  key={index}/>)
+                : (<Loader  key={index}/>)
             ))}
         </section>
      );

@@ -7,7 +7,7 @@ import { auth, provider } from "../firebase/config";
 
 const Header = () => {
     const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem('isAuth')) || false);
-    
+    const [showSideBar, setShowSideBar] = useState(false);
 
     function handleLogin(){
         signInWithPopup(auth, provider).then((result) => {
@@ -25,10 +25,11 @@ const Header = () => {
 
 
     return ( 
+        <section>
         <header>
             <Link to="/" className="link">
                 <img src={image} alt="Logo"/>
-                <p>Qoutes</p>
+                <p>Quotes</p>
             </Link>
         
             <nav className="Nav">
@@ -40,8 +41,23 @@ const Header = () => {
                      </>
                 ) : ( <button onClick={handleLogin} className="login-btn"> <i className="bi bi-google"></i>Login</button>)}
             </nav>
-            {/* <span className='menu-bar'> <i class="bi bi-list"></i></span> */}
+            {<span className='menu-bar' onClick={() => setShowSideBar(!showSideBar)}> <i class="bi bi-list"></i></span> }
         </header>
+
+            <nav className={`sidebar ${showSideBar ? 'active' : ''}`}>
+                <div>   
+                    <NavLink to="/" className="navlink">Home</NavLink>
+                    <span className='cross'  onClick={() => setShowSideBar(false)}><i class="bi bi-x"></i></span>
+                </div>
+                {isAuth ? (
+                     <>
+                        <NavLink to="/create" className="navlink">Create</NavLink>
+                        <button onClick={handleLogout} className="login-btn"> <i className="bi bi-box-arrow-right"></i> Logout</button>
+                     </>
+                ) : ( <button onClick={handleLogin} className="login-btn"> <i className="bi bi-google"></i>Login</button>)}
+            </nav>
+
+        </section>
      );
 }
  
