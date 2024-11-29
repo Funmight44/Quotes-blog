@@ -32,8 +32,8 @@ const Create = () => {
                 <h2>Add new post</h2>
             </div>
             <form onSubmit={createPost} className="create">
-                <input type="text" placeholder="Title" name="title"  maxLength="50"  required/>
-                <textarea type="text" placeholder="Create post" name="description" maxLength="80" />
+                <input type="text" placeholder="Title" name="title"  maxLength="60"  required/>
+                <textarea type="text" placeholder="Create post" name="description" />
                 <button type="submit">Create</button>
             </form>
         </section>

@@ -99,7 +99,7 @@ section{
 }
 
 .card{
-    width: 70%;
+    max-width: 90%;
     padding: 10px;
     margin: 20px auto;
     box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.24) ;
