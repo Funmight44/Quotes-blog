@@ -46,15 +46,15 @@ const Header = () => {
 
             <nav className={`sidebar ${showSideBar ? 'active' : ''}`}>
                 <div>   
-                    <NavLink to="/" className="navlink">Home</NavLink>
+                    <NavLink to="/" className="navlink" onClick={() => setShowSideBar(false)} >Home</NavLink>
                     <span className='cross'  onClick={() => setShowSideBar(false)}><i class="bi bi-x"></i></span>
                 </div>
                 {isAuth ? (
                      <>
-                        <NavLink to="/create" className="navlink">Create</NavLink>
+                        <NavLink to="/create" className="navlink" onClick={() => setShowSideBar(false)}>Create</NavLink>
                         <button onClick={handleLogout} className="login-btn"> <i className="bi bi-box-arrow-right"></i> Logout</button>
                      </>
-                ) : ( <button onClick={handleLogin} className="login-btn"> <i className="bi bi-google"></i>Login</button>)}
+                ) : ( <button onClick={handleLogin}   className="login-btn"> <i className="bi bi-google"></i>Login</button>)}
             </nav>
 
         </section>

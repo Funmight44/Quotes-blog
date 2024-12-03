@@ -15,7 +15,7 @@ const Home = () => {
     //     {id: 4,  title: "Believe in yourselve", description: "Believe you can, and you’re halfway there..", author: 'Theodore Roosevelt'},
     // ];
 
-    let [qoutes, setqoutes] = useState(new Array(5).fill(false));
+    let [qoutes, setqoutes] = useState(new Array(1).fill(false));
     let [toogle, setToogle] = useState(false);
 
     let qoutesRef =  useRef( collection(db, "qoutes"));

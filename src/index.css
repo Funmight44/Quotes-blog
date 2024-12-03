@@ -53,10 +53,12 @@ header .link img{
     font-weight: 600;
 }
 
-.navlink:hover{
+.navlink:hover, .create button:hover{
     background-color: rgb(193, 51, 193);
     color: #fff;
     border-radius: 10px;
+    transition: all 0.5s;
+    padding: 5px;
 }
 
 header .Nav{
@@ -92,6 +94,27 @@ footer p{
     font-weight: 600;
     color: #000;
 }
+
+.loader {
+	margin: 5rem auto;
+	text-align: center;
+}
+.loader {
+	font-size: 40px;
+    font-weight: 800;
+	color: #fff;;
+	transform-origin: 44% 50%;
+	animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+} 
 
 section{
     max-width: 1200px;
@@ -245,6 +268,9 @@ section{
     align-items: center;
   }
 
+
+
+
   @media (max-width: 600px) {
     header .menu-bar{
         display: block;
@@ -259,3 +285,4 @@ section{
     }
     
   }
+
